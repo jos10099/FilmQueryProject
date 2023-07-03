@@ -1,5 +1,7 @@
 package com.skilldistillery.filmquery.entities;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Film {
@@ -12,12 +14,14 @@ public class Film {
 	private Double rentalRate;
 	private String rating;
 	private String specialFeatures;
-	
+	private List<Actor> actors;
+
 	public Film() {
 		
 	}
-	public Film(int id, String title, String description, Integer releaseYear, String language, Integer rentalDuration, Double rentalRate,
-			String rating, String specialFeatures) {
+
+	public Film(int id, String title, String description, Integer releaseYear, String language, Integer rentalDuration,
+			Double rentalRate, String rating, String specialFeatures) {
 		this.id = id;
 		this.title = title;
 		this.description = description;
@@ -27,8 +31,7 @@ public class Film {
 		this.rentalRate = rentalRate;
 		this.rating = rating;
 		this.specialFeatures = specialFeatures;
-		
-		
+		actors = new ArrayList<>();
 	}
 
 	public int getId() {
@@ -103,6 +106,14 @@ public class Film {
 		this.specialFeatures = specialFeatures;
 	}
 
+	public List<Actor> getActors() {
+		return actors;
+	}
+
+	public void setActors(List<Actor> actors) {
+		this.actors = actors;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(description, id, language, rating, releaseYear, rentalDuration, rentalRate, specialFeatures,
@@ -129,9 +140,10 @@ public class Film {
 	public String toString() {
 		return "Film [id=" + id + ", title=" + title + ", description=" + description + ", releaseYear=" + releaseYear
 				+ ", language=" + language + ", rentalDuration=" + rentalDuration + ", rentalRate=" + rentalRate
-				+ ", rating=" + rating + ", specialFeatures=" + specialFeatures + "]";
+				+ ", rating=" + rating + ", specialFeatures=" + specialFeatures + ", actors=" + actors + "]";
 	}
+
+	public void setLength(int int1) {
 	
-	
-	
+	}
 }
